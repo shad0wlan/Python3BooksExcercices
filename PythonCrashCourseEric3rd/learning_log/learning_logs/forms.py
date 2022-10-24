@@ -1,5 +1,5 @@
 from django import forms
-from .models import Topic
+from .models import Topic, Entry
 
 
 class TopicForm(forms.ModelForm):
@@ -9,3 +9,11 @@ class TopicForm(forms.ModelForm):
         labels = {'text': ''} # Tells to not generate a label for this text
 
 # We will redirect user to the new_topic page
+
+#Adding the entry ability for the topic
+class EntryForm(forms.ModelForm):
+    class Meta:
+        model = Entry
+        fields = ['text']
+        labels = {'text': ''}
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})} # HTML form element

@@ -24,13 +24,19 @@ SECRET_KEY = 'django-insecure-o$p!4r1l)4^re!ntvstesf(48l42hck+)ul_!w+ob&#19+&u81
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["192.168.1.5"]
+
+#My settings
+LOGIN_REDIRECT_URL = 'learning_logs:index'
+LOGOUT_REDIRECT_URL = 'learning_logs:index'
+LOGIN_URL = 'accounts:login'
 
 # Application definition
 
 INSTALLED_APPS = [
     # My apps
     'learning_logs',
+    'accounts',
     # Defaults
     'django.contrib.admin',
     'django.contrib.auth',
